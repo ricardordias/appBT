@@ -1,0 +1,51 @@
+.perfil-content {
+  --background: #F8F8F8;
+  padding: 16px;
+}
+
+.perfil-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(31, 138, 151, 0.08);
+  background: #ffffff;
+}
+
+.perfil-card-header {
+  padding-bottom: 8px;
+}
+
+.perfil-card-title {
+  color: #1F8A97;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.perfil-card-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.perfil-card-content {
+  padding: 0 16px 16px 16px;
+}
+
+.perfil-item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 8px;
+}
+
+.perfil-label {
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 0 0 2px 0;
+}
+
+.perfil-value {
+  font-size: 1rem;
+  color: #1F8A97;
+  font-weight: 500;
+  margin: 0;
+}

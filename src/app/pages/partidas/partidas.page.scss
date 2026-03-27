@@ -1,0 +1,104 @@
+// Partidas – paleta APPBT: título azul turquesa, categoria amarelo, fundo branco
+
+.partidas-content {
+  --background: #F8F8F8;
+  padding: 16px;
+}
+
+.partidas-segment {
+  margin-bottom: 20px;
+  --background: #ffffff;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(31, 138, 151, 0.06);
+
+  ion-segment-button {
+    --color: #666666;
+    --color-checked: #1F8A97;
+    --indicator-color: #1F8A97;
+    font-weight: 500;
+  }
+}
+
+.partidas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.partida-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(31, 138, 151, 0.08);
+  background: #ffffff;
+
+  &::part(native) {
+    border-radius: 12px;
+  }
+}
+
+.partida-card-header {
+  padding-bottom: 8px;
+}
+
+.partida-card-title {
+  color: #1F8A97;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.partida-card-meta {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.partida-card-categoria {
+  color: #F4A300;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.partida-card-content {
+  padding-top: 0;
+
+  p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #666666;
+  }
+}
+
+.partida-vagas {
+  margin-bottom: 8px;
+}
+
+.partida-badge {
+  margin-bottom: 12px;
+}
+
+.partida-btn {
+  margin-top: 8px;
+  margin-right: 8px;
+  --border-radius: 10px;
+}
+
+.partida-btn-emergencia {
+  margin-right: 0;
+}
+
+.partida-confirmado {
+  margin-top: 12px;
+  font-weight: 500;
+  color: #1F8A97;
+}
+
+.partidas-empty {
+  --background: transparent;
+  margin-top: 24px;
+}
+
+.partidas-empty-label {
+  text-align: center;
+  color: #666666;
+}

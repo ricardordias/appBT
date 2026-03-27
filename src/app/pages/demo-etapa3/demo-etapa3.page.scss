@@ -1,0 +1,78 @@
+.demo-etapa3-content {
+  --background: #F8F8F8;
+  padding: 16px;
+}
+
+.demo-etapa3-title {
+  margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F8A97;
+  text-align: center;
+}
+
+.demo-etapa3-card {
+  margin: 0 0 16px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(31, 138, 151, 0.08);
+  background: #ffffff;
+
+  &::part(native) {
+    border-radius: 12px;
+  }
+}
+
+.demo-etapa3-card-header {
+  padding-bottom: 8px;
+}
+
+.demo-etapa3-card-title {
+  color: #1F8A97;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.demo-etapa3-card-content {
+  padding: 16px 20px;
+}
+
+.demo-etapa3-label {
+  margin: 8px 0 2px 0;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.demo-etapa3-value {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1F8A97;
+}
+
+.demo-etapa3-btn {
+  margin-top: 12px;
+  --border-radius: 12px;
+}
+
+.demo-etapa3-message {
+  margin: 12px 0 0 0;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.demo-etapa3-list-label {
+  margin: 12px 0 4px 0;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.demo-etapa3-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  color: #1F8A97;
+}
+
+.demo-etapa3-back .demo-etapa3-card-content {
+  padding: 12px 20px;
+}

@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ambiente de teste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="demo-etapa3-content">
+  <h2 class="demo-etapa3-title">Ambiente de teste para administrador</h2>
+
+  <ion-card class="demo-etapa3-card">
+    <ion-card-header class="demo-etapa3-card-header">
+      <ion-card-title class="demo-etapa3-card-title">AUTENTICAÇÃO</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="demo-etapa3-card-content">
+      <p class="demo-etapa3-label">Usuário logado:</p>
+      <p class="demo-etapa3-value">{{ userName || '—' }}</p>
+      <p class="demo-etapa3-label">Tipo do usuário:</p>
+      <p class="demo-etapa3-value">{{ userTipo || '—' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="demo-etapa3-card">
+    <ion-card-header class="demo-etapa3-card-header">
+      <ion-card-title class="demo-etapa3-card-title">DADOS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="demo-etapa3-card-content">
+      <p class="demo-etapa3-label">Quadras cadastradas:</p>
+      <p class="demo-etapa3-value">{{ quadrasCount }}</p>
+      <p class="demo-etapa3-label">Quantidade de partidas:</p>
+      <p class="demo-etapa3-value">{{ partidasCount }}</p>
+      <ion-button expand="block" color="primary" (click)="criarPartidaTeste()" class="demo-etapa3-btn">
+        Criar partida de teste
+      </ion-button>
+      <ion-button expand="block" fill="outline" (click)="listarPartidas()" class="demo-etapa3-btn">
+        Listar partidas
+      </ion-button>
+      @if (partidasList.length > 0) {
+        <p class="demo-etapa3-list-label">Últimas partidas:</p>
+        <ul class="demo-etapa3-list">
+          @for (p of partidasList.slice(-5); track p.id) {
+            <li>{{ p.data }} {{ p.horario }} – {{ p.categoria }}</li>
+          }
+        </ul>
+      }
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="demo-etapa3-card">
+    <ion-card-header class="demo-etapa3-card-header">
+      <ion-card-title class="demo-etapa3-card-title">GPS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="demo-etapa3-card-content">
+      <ion-button expand="block" color="primary" (click)="gpsSolicitarPermissao()" class="demo-etapa3-btn">
+        Solicitar permissão
+      </ion-button>
+      <ion-button expand="block" color="primary" (click)="gpsObterLocalizacao()" [disabled]="gpsLoading" class="demo-etapa3-btn">
+        {{ gpsLoading ? 'Obtendo...' : 'Obter localização' }}
+      </ion-button>
+      <p class="demo-etapa3-label">Latitude:</p>
+      <p class="demo-etapa3-value">{{ gpsLat != null ? gpsLat.toFixed(6) : '—' }}</p>
+      <p class="demo-etapa3-label">Longitude:</p>
+      <p class="demo-etapa3-value">{{ gpsLon != null ? gpsLon.toFixed(6) : '—' }}</p>
+      @if (gpsMessage) {
+        <p class="demo-etapa3-message">{{ gpsMessage }}</p>
+      }
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="demo-etapa3-card">
+    <ion-card-header class="demo-etapa3-card-header">
+      <ion-card-title class="demo-etapa3-card-title">NOTIFICAÇÕES</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="demo-etapa3-card-content">
+      <ion-button expand="block" color="secondary" (click)="notifSolicitarPermissao()" class="demo-etapa3-btn">
+        Solicitar permissão
+      </ion-button>
+      <ion-button expand="block" color="secondary" (click)="notifEnviarImediata()" [disabled]="notifLoading" class="demo-etapa3-btn">
+        Enviar notificação imediata
+      </ion-button>
+      <ion-button expand="block" color="secondary" (click)="notifAgendar1Min()" [disabled]="notifLoading" class="demo-etapa3-btn">
+        Agendar notificação em 1 minuto
+      </ion-button>
+      @if (notifPermMessage) {
+        <p class="demo-etapa3-message">{{ notifPermMessage }}</p>
+      }
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="demo-etapa3-card demo-etapa3-back">
+    <ion-card-content class="demo-etapa3-card-content">
+      <ion-button expand="block" fill="outline" routerLink="/admin" class="demo-etapa3-btn">Voltar ao admin</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

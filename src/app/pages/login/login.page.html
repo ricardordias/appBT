@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Beach Chama - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content">
+  <div class="login-wrapper">
+    <div class="login-container">
+      <img src="assets/images/beach_chama.jpg" alt="Beach Chama" class="login-logo" />
+      <h1 class="login-title">Beach Chama</h1>
+      <p class="login-subtitle">Beach Tennis</p>
+      <p class="login-subtitle-secondary">Organize partidas e encontre sua quadra</p>
+
+      <ion-card class="login-card">
+        <ion-card-content class="login-card-content">
+          <ion-item class="login-item" lines="none">
+            <ion-label position="stacked">E-mail</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              placeholder="seu@email.com"
+              class="login-input"
+            ></ion-input>
+          </ion-item>
+          <ion-item class="login-item" lines="none">
+            <ion-label position="stacked">Senha</ion-label>
+            <ion-input
+              type="password"
+              [(ngModel)]="senha"
+              placeholder="Senha"
+              class="login-input"
+            ></ion-input>
+          </ion-item>
+          <ion-button
+            expand="block"
+            color="secondary"
+            (click)="login()"
+            [disabled]="loading"
+            class="login-btn-entrar"
+          >
+            Entrar
+          </ion-button>
+          <p class="login-link-wrap">
+            <a routerLink="/register" class="login-link">Criar conta (usuário comum)</a>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

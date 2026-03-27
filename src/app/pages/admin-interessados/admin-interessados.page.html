@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Interessados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="admin-interessados-content">
+  <ion-button expand="block" color="primary" (click)="abrirModal()" class="admin-interessados-btn-add">
+    Cadastrar interessado
+  </ion-button>
+
+  <div class="admin-interessados-list">
+    <ion-card *ngFor="let i of interessados" class="admin-interessados-card">
+      <ion-card-content class="admin-interessados-card-content">
+        <ion-label class="admin-interessados-card-title">{{ i.nome }}</ion-label>
+        <p class="admin-interessados-card-meta">{{ i.sexo }} · {{ i.nivel }} · {{ i.categoriasPermitidas.join(', ') }}</p>
+        <p *ngIf="i.telefone" class="admin-interessados-card-tel">Tel: {{ i.telefone }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-item *ngIf="interessados.length === 0" lines="none" class="admin-interessados-empty">
+    <ion-label class="admin-interessados-empty-label">Nenhum interessado cadastrado.</ion-label>
+  </ion-item>
+
+  <ion-modal [isOpen]="modalAberto" (didDismiss)="fecharModal()" class="admin-interessados-modal">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Novo interessado</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="fecharModal()">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="admin-interessados-modal-content">
+      <p class="admin-interessados-modal-desc">Não usa o app e não possui localização.</p>
+      <ion-item class="admin-interessados-modal-item" lines="none">
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input [(ngModel)]="formNome" placeholder="Nome" class="admin-interessados-modal-input"></ion-input>
+      </ion-item>
+      <ion-item class="admin-interessados-modal-item" lines="none">
+        <ion-label position="stacked">Sexo</ion-label>
+        <ion-select [(ngModel)]="formSexo" class="admin-interessados-modal-select">
+          <ion-select-option *ngFor="let s of sexos" [value]="s">{{ s }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="admin-interessados-modal-item" lines="none">
+        <ion-label position="stacked">Nível</ion-label>
+        <ion-select [(ngModel)]="formNivel" class="admin-interessados-modal-select">
+          <ion-select-option *ngFor="let n of niveis" [value]="n">{{ n }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="admin-interessados-modal-item" lines="none">
+        <ion-label position="stacked">Categorias permitidas</ion-label>
+        <ion-select [(ngModel)]="formCategorias" multiple="true" class="admin-interessados-modal-select">
+          <ion-select-option *ngFor="let c of categorias" [value]="c">{{ c }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="admin-interessados-modal-item" lines="none">
+        <ion-label position="stacked">Telefone (opcional)</ion-label>
+        <ion-input [(ngModel)]="formTelefone" type="tel" placeholder="Telefone" class="admin-interessados-modal-input"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="primary" (click)="salvar()" class="admin-interessados-modal-btn">Salvar</ion-button>
+    </ion-content>
+  </ion-modal>
+</ion-content>

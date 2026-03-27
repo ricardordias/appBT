@@ -1,0 +1,79 @@
+// Paleta APPBT – cores exatas do logotipo
+// Azul turquesa principal: #1F8A97 | Amarelo dourado principal: #F4A300
+
+$app-azul-turquesa: #1F8A97;
+$app-azul-turquesa-rgb: 31, 138, 151;
+$app-amarelo-dourado: #F4A300;
+$app-amarelo-dourado-rgb: 244, 163, 0;
+$app-fundo: #F8F8F8;
+$app-fundo-rgb: 248, 248, 248;
+$app-cinza-secundario: #666666;
+
+:root {
+  // Primary = azul turquesa (toolbar, botões secundários, títulos, labels)
+  --ion-color-primary: #{$app-azul-turquesa};
+  --ion-color-primary-rgb: #{$app-azul-turquesa-rgb};
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #1b7a86;
+  --ion-color-primary-tint: #3596a1;
+
+  // Secondary = amarelo dourado (botão principal / CTA)
+  --ion-color-secondary: #{$app-amarelo-dourado};
+  --ion-color-secondary-rgb: #{$app-amarelo-dourado-rgb};
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #d78f00;
+  --ion-color-secondary-tint: #f5ac1a;
+
+  // Tertiary alinhado ao secondary para compatibilidade (amarelo)
+  --ion-color-tertiary: #{$app-amarelo-dourado};
+  --ion-color-tertiary-rgb: #{$app-amarelo-dourado-rgb};
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #d78f00;
+  --ion-color-tertiary-tint: #f5ac1a;
+
+  // Fundo geral = branco suave
+  --ion-background-color: #{$app-fundo};
+  --ion-background-color-rgb: #{$app-fundo-rgb};
+
+  // Textos: principal azul turquesa, secundário cinza suave
+  --ion-text-color: #{$app-azul-turquesa};
+  --ion-text-color-rgb: #{$app-azul-turquesa-rgb};
+  --ion-color-step-350: #{$app-cinza-secundario};
+  --ion-color-step-400: #666666;
+  --ion-color-step-500: #757575;
+}
+
+// ETAPA 2 – Toolbar: fundo azul turquesa, texto e ícones brancos
+ion-toolbar {
+  --background: #{$app-azul-turquesa};
+  --color: #ffffff;
+
+  ion-button,
+  ion-back-button,
+  ion-icon {
+    --color: #ffffff;
+    color: #ffffff;
+  }
+
+  // Botão hambúrguer sempre visível no canto superior esquerdo (menu recolhido)
+  ion-menu-button {
+    --color: #ffffff;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    min-width: 48px;
+    min-height: 48px;
+    margin: 0;
+
+    &::part(native) {
+      color: #ffffff;
+    }
+
+    ion-icon {
+      font-size: 28px;
+      color: #ffffff;
+    }
+  }
+}
